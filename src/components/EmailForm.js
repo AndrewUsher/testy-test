@@ -5,8 +5,6 @@ const EmailForm = () => {
   const [email, setEmail] = useState('');
 
   const submitRequest = async event => {
-    event.preventDefault();
-    event.stopPropagation();
 
     setEmail('');
     setMessage("Nice - You're in!");
@@ -37,10 +35,11 @@ const EmailForm = () => {
         value={email}
         required
       />
-      <input type="submit" value="Sign Up" />
+      <button type="submit">Sign Up</button>
       <span className={`${message ? 'visible success' : ''} message`}>
         {message}
       </span>
+      <input type="hidden" name="form-name" value="woofstr-signup" />
     </form>
   );
 };
